@@ -48,9 +48,9 @@ for (let i = 2; i <= 10; i++) {
 //     result = num2;
 //   }
 // }
-let num1 = 10,
-    num2 = 20,
-    result;
+let num1 = 10;
+let num2 = 20;
+let result;
  
 result ??+ (num1 ?? num2);
    
@@ -65,20 +65,20 @@ result ??+ (num1 ?? num2);
 // Иначе – «Неверный пароль»,
 // При отмене или в случае если ничего не введено – «Отменено».
 let value = prompt('Кто там?', '');
-    if (value == 'Админ') {
-      let pass = prompt('Пароль?', '');
-      if (pass == 'Я главный') {
-        console.log('Здравствуйте!');
-      } else if (pass == null) {
-        console.log('Отменено');
-      } else {
-        console.log('Неверный пароль');
-    }
-  } else if (!value == 'Админ') {
-      console.log('Я вас не знаю');
+if (value === 'Админ') {
+  let pass = prompt('Пароль?', '');
+  if (pass === 'Я главный') {
+    console.log('Здравствуйте!');
+  } else if (pass === null) {
+    console.log('Отменено');
   } else {
-      console.log('Отменено');    
-}
+    console.log('Неверный пароль');
+  }
+} else if (!value === 'Админ') {
+  console.log('Я вас не знаю');
+} else {
+  console.log('Отменено');
+}  
 
 
 
@@ -90,28 +90,49 @@ let value = prompt('Кто там?', '');
 // Для n = 10 результат должен быть 2,3,5,7.
 // P.S. Код также должен легко модифицироваться для любых других интервалов.
 
-let l = +prompt("Введите начало интервала", 2);
-let n = +prompt("Введите границу интервала", 10);
-if (l > n) { 
-  alert("Неверно задан интервал чисел,l>n"); 
-  renurn; 
-}
+// let l = +prompt("Введите начало интервала", 2);
+// let n = +prompt("Введите границу интервала", 10);
+// if (l > n) { 
+//   alert("Неверно задан интервал чисел,l>n"); 
+//   return; 
+// }
+// label: for (let i = l; i <= n; i++) {
+//   if (i % 2 === 0 && i !== 2) {
+//     continue;
+//   }
+//   if (i === 1 || i === 2) {
+//     console.log(i); 
+//     continue;
+//   }
+//   for (let j = l; j <= n; j++) {
+//     if (i === j || j === 1 || j === 2 || j > i) {
+//       continue;
+//     }  
+//     if (i % j === 0) {
+//       continue label;
+//     }  
+//   } 
+//   console.log(i); 
+// }
+
+let l = +prompt("Введите начало интервала", 15);
+let n = +prompt("Введите границу интервала", 75);
 label: for (let i = l; i <= n; i++) {
-  if (i % 2 === 0 && i != 2) {
-    continue;
-  }
-  if (i === 1 || i === 2) {
-    console.log(i); 
-    continue;
-  }
-  for (let j = l; j <= n; j++) {
-    if (i === j || j === 1 || j === 2 || j > i) {
-    continue;
-  }  
+  for (let j = 2; j < i; j++) {
     if (i % j === 0) {
       continue label;
-    }  
-    } console.log(i); 
+    }
+  } console.log(i);
+}
+/// by half
+let l = +prompt("Введите начало интервала", 15);
+let n = +prompt("Введите границу интервала", 75);
+label: for (let i = l; i <= n; i++) {
+  for (let j = 2; j < i / 2; j++) {
+    if (i % j === 0) {
+      continue label;
+    }
+  } console.log(i);
 }
 
 
@@ -126,9 +147,9 @@ label: for (let i = l; i <= n; i++) {
 
 function min(a, b) {
   if (a < b) {
-    console.log(a)
+    return a;
   } else {
-    console.log(b)
+    return b;
   }
 }
 let value1 = +prompt('Введите число a');
@@ -145,13 +166,13 @@ console.log(min(value1, value2));
 // Создайте страницу, которая запрашивает x и n, а затем выводит результат pow(x,n).
 // P.S. В этой задаче функция обязана поддерживать только натуральные значения n, т.е. целые от 1 и выше.
 function pow(a, b) {
-  console.log(a ** b)
+  return a ** b;
 }
 let a = +prompt('Введите натуральное число a');
 let b = +prompt('Введите натуральное число b');
-if (a < 1 || b < 1 || a % 1 != 0 || b % 1 != 0) { 
+if (a < 1 || b < 1 || a % 1 !== 0 || b % 1 !== 0) { 
   alert("Неверно задано число"); 
-  renurn;
+  return;
 }
 console.log(pow(a, b));
 
@@ -200,8 +221,8 @@ console.log(checkAge(inAge))
 //   function() { alert("Вы отменили выполнение."); }
 // );
 let ask = (question, yes, no) => {
-  if (confirm(question)) yes()
-  else no();
+  if (confirm(question)) {yes();}
+  else {no();}
 }
 
 ask(
