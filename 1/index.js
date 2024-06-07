@@ -90,40 +90,6 @@ if (value === 'Админ') {
 // Для n = 10 результат должен быть 2,3,5,7.
 // P.S. Код также должен легко модифицироваться для любых других интервалов.
 
-// let l = +prompt("Введите начало интервала", 2);
-// let n = +prompt("Введите границу интервала", 10);
-// if (l > n) { 
-//   alert("Неверно задан интервал чисел,l>n"); 
-//   return; 
-// }
-// label: for (let i = l; i <= n; i++) {
-//   if (i % 2 === 0 && i !== 2) {
-//     continue;
-//   }
-//   if (i === 1 || i === 2) {
-//     console.log(i); 
-//     continue;
-//   }
-//   for (let j = l; j <= n; j++) {
-//     if (i === j || j === 1 || j === 2 || j > i) {
-//       continue;
-//     }  
-//     if (i % j === 0) {
-//       continue label;
-//     }  
-//   } 
-//   console.log(i); 
-// }
-
-let l = +prompt("Введите начало интервала", 15);
-let n = +prompt("Введите границу интервала", 75);
-label: for (let i = l; i <= n; i++) {
-  for (let j = 2; j < i; j++) {
-    if (i % j === 0) {
-      continue label;
-    }
-  } console.log(i);
-}
 /// by half
 let l = +prompt("Введите начало интервала", 15);
 let n = +prompt("Введите границу интервала", 75);
