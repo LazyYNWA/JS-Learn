@@ -1,0 +1,18 @@
+{
+  "docNumber": "0000-000369",
+  "docDate": "31.07.2024 12:00:01",
+  "nameOfDirectedActivity": "Реклама",
+  "CFO": "Отдел продаж", 
+  "clientName": "Кратос СК ООО",
+  "clientFullname": "ООО 'СЕРВИСНАЯ КОМПАНИЯ КРАТОС'", 
+  "clientINN": 123456789, 
+  "brandName": "New Balance", 
+  "goods": [
+    {
+      "goodName": "Кирпич", 
+      "goodCode": "00000-1311", 
+      "amount": 1200, 
+      "sumWithNDS": 3500000
+    }
+  ]
+}
